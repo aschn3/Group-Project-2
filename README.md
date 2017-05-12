@@ -3,7 +3,7 @@ Group Project #2
 
 <h2>Reference Documentation:</h2>
 <ul>
-  <li><a href="https://carto.com/docs" target="_blank">Carto</a></li>
+  <li><a href="https://carto.com/docs">Carto</a></li>
   <li><a href="https://developers.route360.net/guide/">Route360</a></li>
   <li><a href="https://www.mapbox.com/developers/">MapBox</a></li>
   <li><a href="http://dpcd-coaplangis.opendata.arcgis.com/">Atlanta GIS Data</a></li>
