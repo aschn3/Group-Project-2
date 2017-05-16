@@ -11,64 +11,107 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 	</head>
-	<body>
-		<div class="container">
-			<div class="jumbotron text-center" id="header" >
-				<h1>Employee Data Management</h1>
-				<p>A Comprehensive Directory of Employee Billable Hours</p>
-			</div>
-
-			<div class="panel panel-default">
-				<div class="panel-heading"><h4>Current Employees</h4></div>
-				<table class="table table-striped">
-					<thread>
-						<tr>
-							<th>Employee Name</th>
-							<th>Role</th>
-							<th>Start Date</th>
-							<th>Months Worked</th>
-							<th>Monthly Rate ($)</th>
-							<th>Total Billed ($)</th>
-						</tr>
-					</thread>
-					<tbody id="employees">
-					<!-- add empl here -->
-					</tbody>
-
-				</table>
-			</div>
-			
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">Add Employee</h3>
-				</div>
-				<div class="panel-body">
-					<!-- Sign-up Form (note the various input "types")-->
-					<form role="form">
-						<div class="form-group">
-							<label for="name-input">Employee Name:</label>
-							<input class="form-control" id="employee-name" type="text">
-						</div>
-						<div class="form-group">
-							<label for="role-input">Role:</label>
-							<input class="form-control" id="role-input" type="text">
-						</div>
-						<div class="form-group">
-							<label for="start-input">Start Date:</label>
-							<input class="form-control" id="start-input" type="date">
-						</div>
-						<div class="form-group">
-							<label for="monthly-input">Monthly Rate:</label>
-							<input class="form-control" id="monthly-input" type="number"></input>
-						</div>
-						<button class="btn btn-default" id="add-user" type="submit">Submit</button>
-					</form>
-				</div>
-				
-			</div>
-		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
-		<script type="text/javascript" src="./assets/javascript/app.js"></script>
-	</body>
+	<header>
+   <h4 class="caption">Search By:</h4>
+    <div class="nav">
+        <select name="month" id="month" placeholder="Month">
+            <option value="">Month</option>
+            <option value="january">January</option>
+            <option value="february">February</option>
+            <option value="march">March</option>
+            <option value="april">April</option>
+            <option value="may">May</option>
+            <option value="june">June</option>
+            <option value="july">July</option>
+            <option value="august">August</option>
+            <option value="september">September</option>
+            <option value="october">October</option>
+            <option value="november">November</option>
+            <option value="december">December</option>
+        </select>
+        <select name="category" id="category" placeholder="Category">
+            <option value="">Categories</option>
+            <option value="family">Family</option>
+            <option value="music">Music</option>
+            <option value="sports">Sports</option>
+            <option value="festivals">Festivals</option>
+            <option value="theater">Theatre</option>
+            <option value="galleries">galleries</option>
+            <option value="film">Film</option>
+            <option value="museums">Museums</option>
+            <option value="adventure">Adventure</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="parks/leisure">Parks/Leisure</option>
+            <option value="restaurants">Restaurants</option>
+            <option value="hotels">Hotels</option>
+            <option value="entertainment">Entertainment</option>
+        </select>
+        <select name="category" id="category" placeholder="Category">
+            <option value="">Price</option>
+            <option value="free">Free</option>
+            <option value="low">$1-$20</option>
+            <option value="reasonable">$21-$40</option>
+            <option value="medium">$41-$60</option>
+            <option value="high">$61-$80</option>
+            <option value="expensive">$80+</option>
+        </select>
+        <input type="search" name="event_name" value="" placeholder="Event Name">
+        <button type="sub_btn" class="sub_btn">Submit</button>
+        
+  </header>
+  <body>
+  <video autoplay="true" loop id="video-background" muted>
+  <source src="images/skyline.mp4" type="video/mp4">
+  <source src="images/skyline.mp4" type="video/webm">
+  </video>
+  <!--<div class="text">Whats around</div>-->
+  <div class="container">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <div class="col-md-3">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+        </div>
+      </ul>
+      <div>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  
+    </div>
+  </body>
 </html>
