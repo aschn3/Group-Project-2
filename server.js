@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var exphbs = require("express-handlebars");
+var cookieParser = require("cookie-parser");
 
 // Sets up the Express App
 // =============================================================
@@ -16,7 +17,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static("app/public"));
 
-
+app.use(cookieParser("randomSecretForSigningCookies"));
 // Routes
 // =============================================================
 require("./app/routes/api-routes.js")(app);
